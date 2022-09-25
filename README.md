@@ -1,1 +1,1 @@
-# never-note
+I hope you never try it
