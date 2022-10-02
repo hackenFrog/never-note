@@ -1,8 +1,10 @@
 const todosNode = document.querySelector('.js-todos')
 const inputNode = document.querySelector('.js-input')
 const btnNode = document.querySelector('.js-btn')
+const todosDoneNode = document.querySelector('.js-todosDone')
 
 let todos = []
+let todosDone = []
 
 function addTodo(text) {
     const todo = {
@@ -23,23 +25,30 @@ function deleteTodo(id) {
 }
 
 function render() {
-    console.log(todos)
-    let html = ''
+    let todosHtml = ''
+    let todosDoneHtml = ''
 
     todos.forEach(todo => {
         if (todo.done) {
-            return
-        }
+            todosDoneHtml += `
+            <div>${todo.text}</div>
+            `
+        } else {
 
-        html += `
+        todosHtml += `
             <div>${todo.text}
             <button data-id='${todo.id}'>Зроблено</button>
             </div>
         `
-
+    }
     })
 
-    todosNode.innerHTML = html
+    todosNode.innerHTML = todosHtml
+    todosDoneNode.innerHTML = todosDoneHtml
+
+    console.log(todos)
+    console.log(todosDone)
+
 }
 
 btnNode.addEventListener('click', () => {
