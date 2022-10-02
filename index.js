@@ -33,7 +33,7 @@ function render() {
 
         html += `
             <div>${todo.text}
-            <button data-id='${todo.id}'>Сделано</button>
+            <button data-id='${todo.id}'>Зроблено</button>
             </div>
         `
 
